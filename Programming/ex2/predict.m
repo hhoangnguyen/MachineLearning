@@ -15,11 +15,11 @@ p = zeros(m, 1);
 %               You should set p to a vector of 0's and 1's
 %
 
+% make prediction using sigmoid function to calculate h_theta_x
+prediction = sigmoid(X * theta);
 
-
-
-
-
+% compare with threshold (0.5) to output prediction either 0 or 1
+p = prediction >= 0.5;
 
 % =========================================================================
 

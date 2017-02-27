@@ -20,12 +20,14 @@ grad = zeros(size(theta));
 % Note: grad should have the same dimensions as theta
 %
 
+% use sigmoid function to calculate h_theta_x
+h_theta_x = sigmoid(X * theta);
 
+% y is nx1, h_theta_x is nx1, J is a number
+J = -1/m * (y' * log(h_theta_x) + (1 .- y)' * (log(1 .- h_theta_x)));
 
-
-
-
-
+% gradient
+grad = 1/m * (X' * (h_theta_x - y));
 
 % =============================================================
 
