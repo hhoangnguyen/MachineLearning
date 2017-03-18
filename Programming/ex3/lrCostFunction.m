@@ -43,12 +43,12 @@ h_theta_x = sigmoid(X * theta);
 newTheta = theta;
 newTheta(1,1) = 0;
 
-# regularized costFunction
+% regularized costFunction
 regularized_cost_param = lambda/(2*m) * sum(power(newTheta, 2));
 costFunction = -1/m * (y' * log(h_theta_x) + (1 .- y)' * (log(1 .- h_theta_x)));
 J = costFunction + regularized_cost_param;
 
-# regularized gradient
+% regularized gradient
 regularized_param = lambda/m * (newTheta);
 regular_grad = 1/m * (X' * (h_theta_x - y));
 grad = regular_grad + regularized_param;
